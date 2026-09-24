@@ -4,336 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sorted Health Portal - Secure Electronic Medical Records">
+
+<meta
+name="description"
+content="Sorted Health Portal - Secure Electronic Medical Records">
+
   <title>Sorted Health Portal</title>
 
-  <style>
-    :root {
-      --primary: #1769aa;
-      --primary-dark: #0e4f82;
-      --accent: #20a39e;
-      --bg: #f5f8fb;
-      --card: #ffffff;
-      --text: #172b3a;
-      --muted: #6b7c8c;
-      --border: #dce5ec;
-      --shadow: 0 20px 50px rgba(23, 58, 85, 0.10);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    /* Header */
-
-    .topbar {
-      height: 72px;
-      background: rgba(255, 255, 255, 0.96);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 42px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 19px;
-      font-weight: 700;
-      color: var(--primary-dark);
-    }
-
-    .logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 11px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: 800;
-      box-shadow: 0 6px 18px rgba(23, 105, 170, 0.20);
-    }
-
-    .secure {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .secure-dot {
-      width: 8px;
-      height: 8px;
-      background: #2da66f;
-      border-radius: 50%;
-    }
-
-    /* Main */
-
-    .page {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 70px 24px 50px;
-    }
-
-    .hero {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 42px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: 7px 13px;
-      margin-bottom: 18px;
-      border-radius: 30px;
-      background: #e9f5fa;
-      color: var(--primary-dark);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-    }
-
-    .hero h1 {
-      margin: 0 0 15px;
-      font-size: 44px;
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-      color: #142c3d;
-    }
-
-    .hero p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.65;
-    }
-
-    /* Login */
-
-    .login-card {
-      width: 100%;
-      max-width: 440px;
-      margin: 0 auto 55px;
-      padding: 34px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    .login-icon {
-      width: 58px;
-      height: 58px;
-      margin: 0 auto 20px;
-      border-radius: 15px;
-      background: linear-gradient(135deg, #eaf5fb, #e7f7f5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-size: 24px;
-      font-weight: 800;
-    }
-
-    .login-card h2 {
-      margin: 0 0 8px;
-      font-size: 24px;
-      color: #172b3a;
-    }
-
-    .login-card p {
-      margin: 0 0 26px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .login-button {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 14px 18px;
-      border-radius: 9px;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 700;
-      transition: all 0.2s ease;
-      box-shadow: 0 6px 16px rgba(23, 105, 170, 0.20);
-    }
-
-    .login-button:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 9px 22px rgba(23, 105, 170, 0.25);
-    }
-
-    .microsoft-icon {
-      width: 18px;
-      height: 18px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 2px;
-    }
-
-    .microsoft-icon span:nth-child(1) {
-      background: #f35325;
-    }
-
-    .microsoft-icon span:nth-child(2) {
-      background: #81bc06;
-    }
-
-    .microsoft-icon span:nth-child(3) {
-      background: #05a6f0;
-    }
-
-    .microsoft-icon span:nth-child(4) {
-      background: #ffba08;
-    }
-
-    .security-note {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* Features */
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .feature {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .feature:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(23, 58, 85, 0.08);
-    }
-
-    .feature-icon {
-      width: 43px;
-      height: 43px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 11px;
-      background: #edf6fb;
-      color: var(--primary);
-      font-size: 11px;
-      font-weight: 800;
-      margin-bottom: 16px;
-    }
-
-    .feature:nth-child(2) .feature-icon {
-      background: #eef8f7;
-      color: #178b85;
-    }
-
-    .feature:nth-child(3) .feature-icon {
-      background: #f3effb;
-      color: #7353a6;
-    }
-
-    .feature:nth-child(4) .feature-icon {
-      background: #fff5e9;
-      color: #c47a22;
-    }
-
-    .feature h3 {
-      margin: 0 0 8px;
-      font-size: 16px;
-    }
-
-    .feature p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    /* Footer */
-
-    footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 12px;
-      padding: 28px;
-    }
-
-    /* Responsive */
-
-    @media (max-width: 850px) {
-      .features {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 550px) {
-      .topbar {
-        padding: 0 18px;
-      }
-
-      .secure {
-        display: none;
-      }
-
-      .page {
-        padding: 50px 18px 35px;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .login-card {
-        padding: 28px 22px;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
+
+  <!-- Header -->
 
   <header class="topbar">
 
@@ -351,9 +34,12 @@
 
   </header>
 
+  <!-- Main -->
+
   <main class="page">
 
 ```
+<!-- Hero -->
 <section class="hero">
 
   <div class="hero-badge">
@@ -372,6 +58,7 @@
 </section>
 
 
+<!-- Login -->
 <section class="login-card">
 
   <div class="login-icon">
@@ -387,6 +74,7 @@
     Sorted Health Portal.
   </p>
 
+  <!-- Azure Static Web Apps + Microsoft Entra ID -->
   <a
     href="/.auth/login/aad"
     class="login-button"
@@ -404,17 +92,19 @@
   </a>
 
   <div class="security-note">
-    🔒 Authentication secured by Microsoft Entra ID
+    <span>🔒</span>
+    Authentication secured by Microsoft Entra ID
   </div>
 
 </section>
 
 
+<!-- Features -->
 <section class="features">
 
   <article class="feature">
 
-    <div class="feature-icon">
+    <div class="feature-icon emr-icon">
       EMR
     </div>
 
@@ -432,7 +122,7 @@
 
   <article class="feature">
 
-    <div class="feature-icon">
+    <div class="feature-icon pdf-icon">
       PDF
     </div>
 
@@ -450,7 +140,7 @@
 
   <article class="feature">
 
-    <div class="feature-icon">
+    <div class="feature-icon ai-icon">
       AI
     </div>
 
@@ -459,38 +149,5 @@
     </h3>
 
     <p>
-      Build intelligent workflows for document extraction,
-      summarisation and healthcare information processing.
-    </p>
-
-  </article>
-
-
-  <article class="feature">
-
-    <div class="feature-icon">
-      Q
-    </div>
-
-    <h3>
-      Questionnaires
-    </h3>
-
-    <p>
-      Create digital questionnaires, capture responses and
-      generate PDF records for the patient's medical record.
-    </p>
-
-  </article>
-
-</section>
+      Build intelligent workflo
 ```
-
-  </main>
-
-  <footer>
-    © 2026 Sorted Health · Secure healthcare platform
-  </footer>
-
-</body>
-</html>
